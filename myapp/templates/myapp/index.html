@@ -15,6 +15,18 @@
         <p><button type="submit">Sign In</button></p>
     </form>
 
+
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+        <!-- <li><a href="/myapp/{{ question.id }}/">{{ question.question_text }}</a></li> -->
+        <li><a href="% url 'dpp:etail' question.id %">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No myapp are available.</p>
+{% endif %}
+
 </body>
 
 </html>
